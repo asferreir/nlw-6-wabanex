@@ -5,12 +5,13 @@ defmodule Wabanex.IMC do
     |> handle_file()
   end
 
-  defp handle_file({:ok, content}) do 
+  defp handle_file({:ok, content}) do
     data =
       content
       |> String.split("\n")
       |> Enum.map(fn line -> parse_line(line) end)
       |> Enum.into(%{})
+
     {:ok, data}
   end
 
@@ -28,5 +29,4 @@ defmodule Wabanex.IMC do
   end
 
   defp calculate_imc([name, heigt, weight]), do: {name, weight / (heigt * heigt)}
-
 end

@@ -18,5 +18,4 @@ defmodule Wabanex.Users.Get do
       user -> {:ok, user}
     end
   end
-  
 end
